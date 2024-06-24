@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -8,24 +8,22 @@ int main() {
   ios::sync_with_stdio(false);
 
   int n,k;
-  queue<int> que;
+  vector<int> arr;
   
   cin >> n >> k;
 
   for(int i=1; i<=n; i++)
-    que.push(i);
+    arr.push_back(i);
 
-  int tmp;
+  int query = 0;
   cout << "<";
-  while(n-- != 1){
-    for(int j=0; j<k-1; j++){
-      tmp = que.front();
-      que.pop();
-      que.push(tmp);
-    }
-
-    cout << que.front() << ", ";
-    que.pop();
+  while (n) {
+    query = (query+k-1) % n;
+    cout << arr[query];
+    arr.erase(arr.begin() + query);
+    n--;
+    if(n)
+      cout << ", ";
   }
-  cout << que.front() << ">";
+  cout << ">";
 }
