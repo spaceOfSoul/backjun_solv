@@ -1,5 +1,6 @@
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
 v,e = map(int, input().split())
 parents = [0] * v
