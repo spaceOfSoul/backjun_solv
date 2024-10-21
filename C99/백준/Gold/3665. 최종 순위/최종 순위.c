@@ -45,13 +45,11 @@ void tsort_print(Node *graph, int *indegree, int n) {
     }
 
     int now = front(&que);
-    // printf("%d : \n", now);
     pop(&que);
     result[i] = now;
 
     for (int j = 0; j < graph[now].edge_size; j++) {
       int dest = graph[now].edge[j];
-      // printf("%d,\n", dest);
       if (dest == -1)
         continue;
       indegree[dest]--;
@@ -96,15 +94,6 @@ int main(void) {
       }
     }
 
-    // for (int i = 1; i <= n; i++) {
-    //   printf("%d : ", i);
-    //   for (int j = 0; j < rank_graph[i].edge_size; j++) {
-    //     printf("%d ", rank_graph[i].edge[j]);
-    //   }
-    //   printf("\nindegree : %d", indegree[i]);
-    //   printf("\n");
-    // }
-
     scanf("%d", &change);
 
     while (change--) {
@@ -137,18 +126,7 @@ int main(void) {
         }
       }
     }
-
-    // for (int i = 1; i <= n; i++) {
-    //   printf("%d : ", i);
-    //   for (int j = 0; j < rank_graph[i].edge_size; j++) {
-    //     printf("%d ", rank_graph[i].edge[j]);
-    //   }
-    //   printf("\nindegree : %d", indegree[i]);
-    //   printf("\n");
-    // }
-
     tsort_print(rank_graph, indegree, n);
-    // printf("-----------\n");
   }
   return 0;
 }
