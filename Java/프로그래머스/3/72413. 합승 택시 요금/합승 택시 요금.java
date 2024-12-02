@@ -51,7 +51,7 @@
 import java.util.*;
 
 class Solution {
-    static final long INF = 1_000_000_000_000L;
+    static final long INF = 1000000000;
     static List<int[]>[] graph;
 
     public int solution(int n, int s, int a, int b, int[][] fares) {
