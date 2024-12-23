@@ -2,7 +2,7 @@ import java.util.*;
 
 
 // 가격이 내려가기 전까지는 스택에 인덱스 push.
-// 새로운 가격(또는 마지막 정산)을 확인할 때 이전 가격보다 하락한 순간, 스택에서 해당 인덱스를 꺼내가며 시간을 계산
+// 새로운 가격이나을 확인할 때 이전 가격보다 하락한 순간, 스택에서 해당 인덱스를 꺼내가며 시간을 계산
 class Solution {
     public int[] solution(int[] prices) {
         int n = prices.length;
